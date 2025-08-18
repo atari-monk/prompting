@@ -1,0 +1,9 @@
+"canvas-resizer.md",
+"exports.md",
+"factory.md",
+"fullscreen-button.md",
+"fullscreen-canvas.md",
+"interfaces.md",
+"renderer.md",
+"styles.md",
+"time-calculator.md"
