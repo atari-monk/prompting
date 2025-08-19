@@ -1,2 +1,0 @@
-"package.md",
-"tsconfig.md"

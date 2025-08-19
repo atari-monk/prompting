@@ -6,4 +6,6 @@
 "interfaces.md",
 "renderer.md",
 "styles.md",
-"time-calculator.md"
+"time-calculator.md",
+"package.md",
+"tsconfig.md"
