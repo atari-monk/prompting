@@ -8,4 +8,6 @@
 "game-engine.md",
 "game-engine-factory.md",
 "scene.md",
-"exports.md"
+"exports.md",
+"package.md",
+"tsconfig.md"

@@ -11,28 +11,3 @@
    - Only make changes when necessary.  
 
 **Output:** Always clarify actions taken (e.g., "Generated new docs," "Updated section X," or "No changes needed").  
-
-## Use Template
-
-```md
-# Name
-
-## Functionality
-
-- 
-
-## Implementation
-
-### Public methods
-
-#### Constructor
-
-- 
-
-#### Method name (use only names, not full header)
-
-- 
-
-### Private methods
-
-```

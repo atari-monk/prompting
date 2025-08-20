@@ -32,3 +32,11 @@ merge_paths C:\Atari-Monk-Art\prompting\documentation-prompt.md C:\Atari-Monk-Ar
 
 [x]
 merge_paths C:\Atari-Monk-Art\prompting\documentation-prompt.md C:\Atari-Monk-Art\dev-blog\content\projects\zippy\code\exports.md C:\Atari-Monk-Art\zippy\src\index.ts
+
+## Configs
+
+[x]
+merge_paths C:\Atari-Monk-Art\prompting\package-prompt.md C:\Atari-Monk-Art\zippy\package.json
+
+[x]
+merge_paths C:\Atari-Monk-Art\prompting\tsconfig-prompt.md C:\Atari-Monk-Art\zippy\tsconfig.json
