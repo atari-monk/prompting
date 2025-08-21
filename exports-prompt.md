@@ -11,3 +11,6 @@
    - Only make changes when necessary.  
 
 **Output:** Always clarify actions taken (e.g., "Generated new docs," "Updated section X," or "No changes needed").  
+Write documentation as markdown file about code.  
+Just list what is exported from library.  
+Usage and code documentation is done in other files.  

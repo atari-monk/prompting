@@ -56,7 +56,8 @@ These packages are only needed for development and building:
 - **Bugs:** [bugs-url] *(if exists)*
 ````
 
-**Finally, provide a one-sentence summary at the very end, outside of the markdown, stating:**
-"This package is a TypeScript library configured for distribution as an npm package." **if** the `types` field and a `build` script using `tsc` are present. If not, do not include this sentence.
+- Similarly describe whatever more is in file
+- Describe overrall what this package is set up for
+- For example: this is npm package export ready, what is the stack and so on
 
-**Now, please document the following `package.json` content:**
+**`package.json` content:**
