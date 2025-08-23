@@ -1,4 +1,0 @@
-- generate doc files with script create-md-files
-- run cli commands from commands file to generate prompts and feed them to LLM
-- put output to doc files
-- copy output to dev-blog
