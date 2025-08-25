@@ -1,29 +1,19 @@
 # prompting
 
-Supporting repo with notes/logs from prompting in projects
+## Project structure
 
-## Definitions
-
-- Project tree organization
-    - project-name/feature.md
-    - project-name/feature.ps1
-    - some-topic-prompts/
-
-## Instructions
-
-- Open project-name/feature.md
-- Copy prompt (Title and list), if prompt is in script, skip this step
-- Move to
-
-```sh
-cd project-name/
-```
-
-- In script feature.ps1, uncomment script for prompt, comment out the rest
-- Run script feature.ps1
-
-```sh
-.\feature.ps1
-```
-
-- Use prompt and collect result
+prompting/
+├── documentation-prompts/                     - Generic prompts shared by projects
+├── notes/                                     - Notes (gitignored)
+├── output/                                    - Store for output (gitignored)
+├── scripts/                                   - Project folder example
+│   ├── prompts/                               - Prompts, each code file has its own md file
+│   └── scripts/                               - Scripts generating prompts
+├── turbo-laps/                                - Project folder example
+│   ├── data/                                  - Project meta data
+│   ├── prompts/
+│   ├── scripts/
+│   └── tools/                                 - Script tools
+│       ├── prompts/                           - Prompts for script tools
+├── .gitignore
+└── README.md
