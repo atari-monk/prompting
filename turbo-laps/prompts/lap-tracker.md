@@ -1,6 +1,6 @@
 # lap-tracker.ts
 
-## Convert form js to ts []
+## Convert form js to ts [x]
 
 - Use latest typescript
 - Convert from js to ts class
@@ -10,9 +10,14 @@
 - Use ctor DI for player
 - Mod player if access for its elements is needed
 
-## Integrate LapTracker with main.ts []
+## Integrate LapTracker with main.ts [x]
 
 - Generate instance
 - Register
 - Scene in both modes
 - Show just changes
+
+## Stop lap tracker [x]
+
+- It shouldnt start automatically
+- Provide interface to start/stop/reset it

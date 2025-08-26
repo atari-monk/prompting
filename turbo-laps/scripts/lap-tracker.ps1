@@ -1,5 +1,5 @@
 ############################################## 
-# Convert form js to ts []
+# Convert form js to ts [x]
 ##############################################
 
 # clipboard_collector reset
@@ -11,13 +11,25 @@
 # clipboard_collector pop
 
 ############################################## 
-# Integrate LapTracker with main.ts []
+# Integrate LapTracker with main.ts [x]
 ##############################################
 
 # clipboard_collector reset
 # clipboard_collector push
 
 # merge_paths C:\Atari-Monk-Art\turbo-laps-scenelet\src\main.ts C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\lap-tracker.ts
+# clipboard_collector push
+
+# clipboard_collector pop
+
+############################################## 
+# Stop lap tracker [x]
+##############################################
+
+# clipboard_collector reset
+# clipboard_collector push
+
+# merge_paths C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\lap-tracker.ts
 # clipboard_collector push
 
 # clipboard_collector pop

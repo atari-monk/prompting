@@ -10,6 +10,8 @@ track-boundary
 road-markings
 track-grass
 lap-tracker
+game-score
+menu
 main
 
 - cd to path C:\Atari-Monk-Art\prompting\turbo-laps\prompts

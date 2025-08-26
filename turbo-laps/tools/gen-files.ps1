@@ -1,4 +1,4 @@
-$items = @("arrow-player", "elipse-track", "rectangle-track", "starting-grid", "track-boundary", "road-markings", "track-grass", "lap-tracker", "main")
+$items = @("arrow-player", "elipse-track", "rectangle-track", "starting-grid", "track-boundary", "road-markings", "track-grass", "lap-tracker", "game-score", "menu", "main")
 Set-Location "C:\Atari-Monk-Art\prompting\turbo-laps\prompts"
 foreach ($item in $items) {
     if (-not (Test-Path "$item.md")) {

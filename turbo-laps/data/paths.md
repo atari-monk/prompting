@@ -10,6 +10,8 @@ C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\track-boundary.ts
 C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\road-markings.ts
 C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\track-grass.ts
 C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\lap-tracker.ts
+C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\game-score.ts
+C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\menu.ts
 ```
 
 # List of Files turbo-laps-js
@@ -33,4 +35,6 @@ C:\Atari-Monk-Art\turbo-laps-js\src\turbo-laps\turbo_laps_config.js
 
 ```
 C:\Atari-Monk-Art\zippy-game-engine\src\interfaces\scene.ts
+C:\Atari-Monk-Art\zippy-game-engine\src\systems\input\input-system.ts
+C:\Atari-Monk-Art\zippy-game-engine\src\systems\input\mouse-system.ts
 ```
