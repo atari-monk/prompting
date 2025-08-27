@@ -12,3 +12,8 @@
 - use method on car or grid
 - probably in init method
 - show only changes
+
+## Configure Car input []
+
+- Initially car input should be off
+- It should be turn on after countdown Go

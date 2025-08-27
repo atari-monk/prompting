@@ -21,3 +21,13 @@
 
 - It shouldnt start automatically
 - Provide interface to start/stop/reset it
+
+## Stop after race [x]
+
+- Stop lap tracker when race is over
+
+## There is a bug []
+
+- After 1 lap is made, stop() should run
+- Break point dosent hit
+- This is becouse handler is null, make it set in ctor

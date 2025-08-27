@@ -12,6 +12,7 @@ track-grass
 lap-tracker
 game-score
 menu
+countdown
 main
 
 - cd to path C:\Atari-Monk-Art\prompting\turbo-laps\prompts

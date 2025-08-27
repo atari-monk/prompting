@@ -33,3 +33,27 @@
 # clipboard_collector push
 
 # clipboard_collector pop
+
+############################################## 
+# Stop after race [x]
+##############################################
+
+# clipboard_collector reset
+# clipboard_collector push
+
+# merge_paths C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\lap-tracker.ts
+# clipboard_collector push
+
+# clipboard_collector pop
+
+############################################## 
+# Stop after race []
+##############################################
+
+clipboard_collector reset
+clipboard_collector push
+
+merge_paths C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\lap-tracker.ts
+clipboard_collector push
+
+clipboard_collector pop
