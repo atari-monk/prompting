@@ -13,6 +13,8 @@ C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\lap-tracker.ts
 C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\game-score.ts
 C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\menu.ts
 C:\Atari-Monk-Art\turbo-laps-scenelet\src\scenes\countdown.ts
+C:\Atari-Monk-Art\turbo-laps-scenelet\src\scene-factory.ts
+C:\Atari-Monk-Art\turbo-laps-scenelet\src\register-single-scene.ts
 ```
 
 # List of Files turbo-laps
