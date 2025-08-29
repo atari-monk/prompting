@@ -1,6 +1,6 @@
 # prompting
 
-## Project structure
+## Project structure (outdated)
 
 prompting/
 ├── documentation-prompts/                     - Generic prompts shared by projects
@@ -15,3 +15,9 @@ prompting/
 │   ├── scripts/
 ├── .gitignore
 └── README.md
+
+## Usage
+
+```sh
+.\main.ps1 -SpecificPrompts 'lap-tracker:sectionFixPrompt'
+```
