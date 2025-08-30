@@ -1,0 +1,17 @@
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/main.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene-factory.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/arrow-player.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/continue.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/countdown.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/elipse-track.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/game-score.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/lap-tracker.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/menu.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/rectangle-track.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/road-markings.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/starting-grid.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/track-boundary.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/track-grass.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/style.css
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/tools.ts
+C:/Atari-Monk-Art/turbo-laps-scenelet/src/vite-env.d.ts

@@ -1,0 +1,23 @@
+{
+    "Role": "Senior Developer",
+    "Task": "Scenes Factory Refactor",
+    "Requirements": [
+        "Extract scene creation logic to separate classes",
+        "Implement factory pattern properly",
+        "Make each class follow Single Responsibility Principle",
+        "Add proper error handling for scene creation",
+        "Maintain backward compatibility",
+        "Add unit tests for new factory classes"
+    ],
+    "StopConditions": ["Requrierments implemented"],
+    "Reasoning": "Need to extract logic to make class more SRP",
+    "Context": "Working on factory class",
+    "Paths": ["C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene-factory.ts"],
+    "OutputFormat": "Self documenting, latest typescript",
+    "File": "scene-factory.ts",
+    "Status": "Pending",
+    "PromptModelVersion": "0.0.1",
+    "LLM": "DeepSeek",
+    "CreatedDate": "2025-08-30T16:50:03.3364472+02:00",
+    "ModifiedDate": "2025-08-30T16:50:03.3364639+02:00"
+}

@@ -1,0 +1,27 @@
+{
+    "PromptModelVersion": "0.0.1",
+    "Role": "Documentation Specialist",
+    "Task": "Create comprehensive documentation for the JSON parsing function",
+    "OutputFormat": "Markdown documentation with examples and usage scenarios",
+    "Context": "Documentation should be beginner-friendly and include practical examples",
+    "Reasoning": "Good documentation is essential for adoption and maintenance",
+    "StopConditions": [
+        "Covers all functions",
+        "Includes examples",
+        "Clear explanations"
+    ],
+    "Paths": ["C:\\Docs\\", "C:\\Scripts\\JsonUtils\\"],
+    "Status": "Pending",
+    "LLM": "DeepSeek",
+    "Name": "DocumentationWriter",
+    "File": "DocumentationWriter.json",
+    "Requirements": [
+        "Beginner-friendly explanations",
+        "Practical code examples",
+        "Usage scenarios",
+        "Troubleshooting section",
+        "API reference format"
+    ],
+    "CreatedDate": "2024-01-15T10:30:00.0000000",
+    "ModifiedDate": "2024-01-15T10:30:00.0000000"
+}
