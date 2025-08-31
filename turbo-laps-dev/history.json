@@ -1,0 +1,20 @@
+[
+    {
+        "Role": "Senior Developer",
+        "Task": "Refactor Scenes Factory",
+        "Requirements": [
+            "For methods: createTrackBoundaryFeature, createCountdownFeature, createLapTrackerFeature, createContinueFeature",
+            "For each, generate simple factory",
+            "With api: generateSceneArray(): Scene[]",
+            "Name it TrackBoundaryFactory and so on"
+        ],
+        "StopConditions": ["Requrierments implemented"],
+        "Paths": [""],
+        "OutputFormat": "Self documenting, latest typescript",
+        "Status": "Done",
+        "PromptModelVersion": "0.0.1",
+        "LLM": "DeepSeek",
+        "CreatedDate": "2025-08-30T16:50:03.3364472+02:00",
+        "ModifiedDate": "2025-08-30T16:50:03.3364639+02:00"
+    }
+]
