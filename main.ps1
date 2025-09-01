@@ -1,7 +1,7 @@
 . ("C:\Atari-Monk-Art\prompting\Prompt.ps1")
 . ("C:\Atari-Monk-Art\prompting\helpers.ps1")
 
-$folderPath = "C:\Atari-Monk-Art\prompting\turbo-laps-dev"
+$folderPath = "C:\Atari-Monk-Art\prompting"
 $fileName = "prompt"
 $fileType = ".json"
 $fullPath = $folderPath + "\" + $fileName  + $fileType

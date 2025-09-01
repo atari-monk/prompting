@@ -1,0 +1,46 @@
+[
+    {
+        "Task": "Fix bug in Prompt scripts",
+        "Requirements": [
+            "Currently when i ommit dates in json there is error",
+            "they should be set in model automatically"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/prompting/Prompt.ps1",
+            "C:/Atari-Monk-Art/prompting/helpers.ps1"
+        ],
+        "Result": "Helper Import-PromptFromFile was fixed",
+        "Template": "powershell-dev.json"
+    },
+    {
+        "Task": "Implement cli script to input data",
+        "Requirements": [
+            "Prompt template is loaded",
+            "Task, Requirements, Paths",
+            "Take those from input in loop for arrays",
+            "Set them to prompt to fill template"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/prompting/cli.ps1",
+            "C:/Atari-Monk-Art/prompting/Prompt.ps1",
+            "C:/Atari-Monk-Art/prompting/helpers.ps1"
+        ],
+        "Result": "Generated but props saved not in wanted order",
+        "Template": "powershell-dev.json"
+    },
+    {
+        "Task": "Fix cli script",
+        "Requirements": [
+            "I want order of props like in example",
+            "When empty just dont save them"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/prompting/cli.ps1",
+            "C:/Atari-Monk-Art/prompting/Prompt.ps1",
+            "C:/Atari-Monk-Art/prompting/helpers.ps1",
+            "C:/Atari-Monk-Art/prompting/prompt-example.json"
+        ],
+        "Result": "",
+        "Template": "powershell-dev.json"
+    }
+]

@@ -1,6 +1,5 @@
 [
     {
-        "Role": "Senior Developer",
         "Task": "Refactor Scenes Factory",
         "Requirements": [
             "For methods: createTrackBoundaryFeature, createCountdownFeature, createLapTrackerFeature, createContinueFeature",
@@ -8,13 +7,142 @@
             "With api: generateSceneArray(): Scene[]",
             "Name it TrackBoundaryFactory and so on"
         ],
-        "StopConditions": ["Requrierments implemented"],
-        "Paths": [""],
-        "OutputFormat": "Self documenting, latest typescript",
-        "Status": "Done",
-        "PromptModelVersion": "0.0.1",
-        "LLM": "DeepSeek",
-        "CreatedDate": "2025-08-30T16:50:03.3364472+02:00",
-        "ModifiedDate": "2025-08-30T16:50:03.3364639+02:00"
+        "Paths": ["C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene-factory.ts"],
+        "Result": "Class is smaller but it was simplified even more to make single independent scene tests in isolation",
+        "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Refactor StartingGrid",
+        "Requirements": [
+            "I dont want dependency on RectangleTrack in StartingGrid",
+            "To avoid this do what i did in TrackBoundary",
+            "default configs",
+            "I would also like a method to set those, to change them",
+            "Write only changes"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/rectangle-track.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/starting-grid.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/track-boundary.ts"
+        ],
+        "Result": "It was repating code in scenes so it was moved to singleton service",
+        "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Refactor RectangleTrack",
+        "Requirements": [
+            "Check if i correctly introduced service with configs",
+            "Point is to provide defaults and update in scene and have singleton to give to other scenes",
+            "Just tell me if its correct or not ?"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/rectangle-track.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/service/track-config.service.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-config.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-state.ts"
+        ],
+        "Result": "The architecture follows good practices for managing shared configuration state across different parts of your application.",
+        "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Refactor ElipseTrack",
+        "Requirements": ["Can u use config service in ElipseTrack Scene ?"],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/rectangle-track.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/service/track-config.service.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-config.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-state.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/elipse-track.ts"
+        ],
+        "Result": "ElipseTrack uses service now",
+        "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Refactor TrackBoundary",
+        "Requirements": ["Can u use config service in TrackBoundary Scene ?"],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/rectangle-track.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/service/track-config.service.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-config.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-state.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/track-boundary.ts"
+        ],
+        "Result": "TrackBoundary uses service now",
+        "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Refactor StartingGrid",
+        "Requirements": ["Can u use config service in StartingGrid Scene ?"],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/rectangle-track.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/service/track-config.service.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-config.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-state.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/starting-grid.ts"
+        ],
+        "Result": "StartingGrid uses service now",
+        "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Refactor RoadMarkings",
+        "Requirements": [
+            "Can u use config service in RoadMarkings Scene ?",
+            "StartingGrid has example"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/service/track-config.service.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-config.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-state.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/starting-grid.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/road-markings.ts"
+        ],
+        "Result": "RoadMarkings uses service now",
+        "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Refactor TrackGrass",
+        "Requirements": [
+            "Can u use config service in TrackGrass Scene ?",
+            "StartingGrid has example"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/service/track-config.service.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-config.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-state.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/starting-grid.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/track-grass.ts"
+        ],
+        "Result": "TrackGrass uses service now",
+        "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Refactor LapTracker",
+        "Requirements": [
+            "Can u use config service in LapTracker Scene ?",
+            "StartingGrid has example",
+            "so remove track dependency and use configService for track config and state"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/service/track-config.service.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-config.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/types/track-state.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/starting-grid.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/lap-tracker.ts"
+        ],
+        "Result": "LapTracker uses service now",
+        "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Refactor LapTracker",
+        "Requirements": [
+            "Implement interface for position on player",
+            "Use this as dependency in LapTracker instead of full ArrowPlayer"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/arrow-player.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/lap-tracker.ts"
+        ],
+        "Result": "LapTracker is beeing tested without dependencies on other scenes",
+        "Template": "typescript-dev.json"
     }
 ]

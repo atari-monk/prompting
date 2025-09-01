@@ -39,9 +39,18 @@ function Import-PromptFromFile {
         $prompt.Requirements = $jsonData.Requirements
         $prompt.PromptModelVersion = $jsonData.PromptModelVersion
         
-        # Date fields
-        $prompt.CreatedDate = [datetime]::Parse($jsonData.CreatedDate)
-        $prompt.ModifiedDate = [datetime]::Parse($jsonData.ModifiedDate)
+        # Date fields - handle null/empty values by using current date
+        if (-not [string]::IsNullOrEmpty($jsonData.CreatedDate)) {
+            $prompt.CreatedDate = [datetime]::Parse($jsonData.CreatedDate)
+        } else {
+            $prompt.CreatedDate = Get-Date
+        }
+        
+        if (-not [string]::IsNullOrEmpty($jsonData.ModifiedDate)) {
+            $prompt.ModifiedDate = [datetime]::Parse($jsonData.ModifiedDate)
+        } else {
+            $prompt.ModifiedDate = Get-Date
+        }
         
         return $prompt
     }
