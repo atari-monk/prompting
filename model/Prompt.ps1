@@ -100,14 +100,15 @@ class Prompt {
     [string]GetCombinedText() {
         $combinedText = @()
         
-        # Core prompt components (required)
+        # Follow the exact order from the example
         $combinedText += "Role: $($this.Role)"
         $combinedText += "Task: $($this.Task)"
-        $combinedText += "Output Format: $($this.OutputFormat)"
         
-        # Optional components
-        if (-not [string]::IsNullOrEmpty($this.Context)) {
-            $combinedText += "Context: $($this.Context)"
+        if ($this.Requirements -and $this.Requirements.Count -gt 0) {
+            $combinedText += "Requirements:"
+            foreach ($req in $this.Requirements) {
+                $combinedText += "- $req"
+            }
         }
         
         if (-not [string]::IsNullOrEmpty($this.Reasoning)) {
@@ -118,56 +119,45 @@ class Prompt {
             $combinedText += "Stop Conditions: $($this.StopConditions -join ', ')"
         }
         
-        if ($this.Requirements -and $this.Requirements.Count -gt 0) {
-            $combinedText += "Requirements:"
-            foreach ($req in $this.Requirements) {
-                $combinedText += "- $req"
-            }
-        }
+        $combinedText += "Output Format: $($this.OutputFormat)"
         
-        # Metadata
+        # Metadata in the order from example
+        $combinedText += "Created: $($this.CreatedDate.ToString('yyyy-MM-dd HH:mm:ss'))"
+        $combinedText += "Last Modified: $($this.ModifiedDate.ToString('yyyy-MM-dd HH:mm:ss'))"
         $combinedText += "Status: $($this.Status)"
         $combinedText += "LLM: $($this.LLM)"
         $combinedText += "Prompt Model Version: $($this.PromptModelVersion)"
-        $combinedText += "Created: $($this.CreatedDate.ToString('yyyy-MM-dd HH:mm:ss'))"
-        $combinedText += "Last Modified: $($this.ModifiedDate.ToString('yyyy-MM-dd HH:mm:ss'))"
-        
-        if (-not [string]::IsNullOrEmpty($this.Name)) {
-            $combinedText += "Name: $($this.Name)"
-        }
-        
-        if (-not [string]::IsNullOrEmpty($this.File)) {
-            $combinedText += "File: $($this.File)"
-        }
         
         if ($this.Paths -and $this.Paths.Count -gt 0) {
             $combinedText += "Paths: $($this.Paths -join ', ')"
         }
         
-        # Status-specific message
-        if ($this.Status -eq "Done") {
-            $combinedText += "Note: Status is Done - this prompt was already implemented, just verify the results"
-        }
-        
-        # Add path content to context
+        # Add path content to context (this should come after Paths as in the example)
         if ($this.Paths -and $this.Paths.Count -gt 0) {
-            $pathContent = @()
+            $combinedText += "Path Contents:"
             foreach ($path in $this.Paths) {
                 if (Test-Path $path) {
                     if (Get-Item $path -ErrorAction SilentlyContinue | Where-Object { $_.PSIsContainer }) {
-                        $pathContent += "Directory: $path (contents not read)"
+                        $combinedText += "Directory: $path (contents not read)"
                     } else {
                         try {
                             $content = Get-Content $path -Raw -ErrorAction Stop
-                            $pathContent += "File: $path`nContent:`n$content`n"
+                            $extension = [System.IO.Path]::GetExtension($path).TrimStart('.')
+                            if ([string]::IsNullOrEmpty($extension)) {
+                                $extension = "txt"
+                            }
+                            $combinedText += "File: $path"
+                            $combinedText += "Content:"
+                            # Use single quotes and escape backticks properly
+                            $combinedText += '```' + $extension
+                            $combinedText += $content
+                            $combinedText += '```'
                         } catch {
-                            $pathContent += "File: $path (error reading: $($_.Exception.Message))"
+                            $combinedText += "File: $path (error reading: $($_.Exception.Message))"
                         }
                     }
+                    $combinedText += ""  # Add empty line between files
                 }
-            }
-            if ($pathContent.Count -gt 0) {
-                $combinedText += "Path Contents:`n$($pathContent -join "`n---`n")"
             }
         }
 
