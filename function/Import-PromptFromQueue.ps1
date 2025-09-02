@@ -18,16 +18,18 @@ function Import-PromptFromQueue {
             return $null
         }
         
-        # Get the first (topmost) item from the queue
+        # Get the first (topmost) item from the queue array
         $queueItem = $queueData[0]
         
         $prompt = [Prompt]::new()
         
-        # Only set fields that exist in the queue item
-        if ($queueItem.Task) { $prompt.Task = $queueItem.Task }
-        if ($queueItem.Requirements) { $prompt.Requirements = $queueItem.Requirements }
-        if ($queueItem.Paths) { $prompt.Paths = $queueItem.Paths }
-        if ($queueItem.Result) { $prompt.Result = $queueItem.Result }
+        # Only set fields that exist in the queue item (prompt object)
+        if ($queueItem.PSObject.Properties['Task']) { $prompt.Task = $queueItem.Task }
+        if ($queueItem.PSObject.Properties['Requirements']) { $prompt.Requirements = $queueItem.Requirements }
+        if ($queueItem.PSObject.Properties['Paths']) { $prompt.Paths = $queueItem.Paths }
+        if ($queueItem.PSObject.Properties['Result']) { $prompt.Result = $queueItem.Result }
+        if ($queueItem.PSObject.Properties['Role']) { $prompt.Role = $queueItem.Role }
+        if ($queueItem.PSObject.Properties['OutputFormat']) { $prompt.OutputFormat = $queueItem.OutputFormat }
         
         return $prompt
     }

@@ -14,37 +14,67 @@ function Move-QueueToHistory {
     }
     
     try {
-        # Load queue data
-        $queueData = Get-Content -Path $QueuePath -Raw -Encoding UTF8 | ConvertFrom-Json
+        # Load queue data - handle empty file case
+        $queueContent = Get-Content -Path $QueuePath -Raw -Encoding UTF8
+        if ([string]::IsNullOrWhiteSpace($queueContent) -or $queueContent.Trim() -eq "[]") {
+            $queueData = @()
+        } else {
+            $queueData = $queueContent | ConvertFrom-Json
+            # Ensure it's always an array, even if single object
+            if ($queueData -isnot [array]) {
+                $queueData = @($queueData)
+            }
+        }
         
         if (-not $queueData -or $queueData.Count -eq 0) {
             Write-Warning "Queue is empty: $QueuePath"
             return $false
         }
         
-        # Get the top item
+        # Get the top item (first in array)
         $topItem = $queueData[0]
         
-        # Load or create history
+        # Load or create history - handle empty file case
         $historyData = @()
         if (Test-Path $HistoryPath) {
-            $historyData = Get-Content -Path $HistoryPath -Raw -Encoding UTF8 | ConvertFrom-Json
+            $historyContent = Get-Content -Path $HistoryPath -Raw -Encoding UTF8
+            if (-not [string]::IsNullOrWhiteSpace($historyContent) -and $historyContent.Trim() -ne "[]") {
+                $existingHistory = $historyContent | ConvertFrom-Json
+                if ($existingHistory -is [array]) {
+                    $historyData = $existingHistory
+                } elseif ($existingHistory -ne $null) {
+                    # Convert single object to array
+                    $historyData = @($existingHistory)
+                }
+            }
         }
         
-        # Add timestamp to the item
+        # Add timestamp to the prompt item
         $topItemWithTimestamp = $topItem | Select-Object *
         $topItemWithTimestamp | Add-Member -NotePropertyName "ProcessedDate" -NotePropertyValue (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
         
-        # Add to history (at the end)
-        $historyData += $topItemWithTimestamp
+        # Add to history at the BOTTOM/END of the array
+        $historyData = @($historyData) + @($topItemWithTimestamp)
         
-        # Save history
-        $historyData | ConvertTo-Json -Depth 3 | Out-File -FilePath $HistoryPath -Encoding UTF8
+        # FORCE history to always be an array, even with one item
+        $jsonOutput = if ($historyData.Count -eq 0) {
+            "[]"
+        } else {
+            ConvertTo-Json -InputObject @($historyData) -Depth 5
+        }
+        
+        $jsonOutput | Out-File -FilePath $HistoryPath -Encoding UTF8 -Force
         
         # Remove from queue if requested
         if ($RemoveFromQueue) {
             $remainingQueue = $queueData | Select-Object -Skip 1
-            $remainingQueue | ConvertTo-Json -Depth 3 | Out-File -FilePath $QueuePath -Encoding UTF8
+            # Ensure queue remains as array, even if empty
+            $queueOutput = if ($remainingQueue.Count -eq 0) {
+                "[]"
+            } else {
+                ConvertTo-Json -InputObject @($remainingQueue) -Depth 5
+            }
+            $queueOutput | Out-File -FilePath $QueuePath -Encoding UTF8 -Force
             Write-Host "Moved top item to history and removed from queue. Remaining items: $($remainingQueue.Count)" -ForegroundColor Green
         } else {
             Write-Host "Added top item to history. Queue remains unchanged." -ForegroundColor Green
