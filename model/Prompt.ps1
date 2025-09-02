@@ -15,7 +15,8 @@ class Prompt {
     [string]$Name
     [string]$File
     [string[]]$Requirements
-    
+    [string]$Result 
+
     # System fields (auto-managed)
     [string]$Status
     [string]$LLM
@@ -61,7 +62,8 @@ class Prompt {
         [string]$llm,
         [string]$name,
         [string]$file,
-        [string[]]$requirements
+        [string[]]$requirements,
+        [string]$result
     ) {
         $this.Role = $role
         $this.Task = $task
@@ -75,6 +77,7 @@ class Prompt {
         $this.Name = $name
         $this.File = $file
         $this.Requirements = $requirements
+        $this.Result = $result
         $this.CreatedDate = Get-Date
         $this.ModifiedDate = Get-Date
         $this.PromptModelVersion = $global:PromptModelVersion
@@ -222,6 +225,7 @@ class Prompt {
             Name = $this.Name
             File = $this.File
             Requirements = $this.Requirements
+            Result = $this.Result
         }
         
         $data | ConvertTo-Json -Depth 3 | Out-File -FilePath $filePath -Encoding UTF8

@@ -2,22 +2,50 @@
 
 This system combines structured data and file contents to generate comprehensive prompts, placing the final output directly into the clipboard for easy use.
 
-## Evolution
+## **Core Features:** (Exists)
+✅ **Template System** - Load pre-defined prompt templates with structured fields
+✅ **Queue System** - Process tasks from a prioritized queue
+✅ **Project Management** - Organize prompts by project folders
+✅ **History Tracking** - Keep records of processed queue items with timestamps
+✅ **Menu Interface** - User-friendly selection menus for both templates and projects
 
-### Stage 1: Scripts and Markdown Files
+## **Advanced Functionality:**
+✅ **Version Control** - Prompt model version compatibility checking
+✅ **Field Merging** - Smart merging of template defaults with queue-specific data
+✅ **Path Processing** - Automatic reading of file/directory contents into context
+✅ **Clipboard Integration** - One-click copy of formatted prompts
+✅ **Validation** - Input validation and error handling
+✅ **Metadata Tracking** - Created/modified dates, status, LLM target, etc.
 
-The initial solution used scripts from a personal scripts repository. Prompts were defined in Markdown (`.md`) files and managed with PowerShell (`.ps1`) scripts. A script would copy a specific prompt from a list in the MD file and provide commands and file paths for context. This resulted in the complete prompt text being placed in the clipboard.
+## **File Structure:**
+```
+prompting/
+├── model/
+│   └── Prompt.ps1          # Core prompt class with all business logic
+├── function/
+│   ├── Select-Template.ps1 # Template selection menu
+│   ├── Import-PromptFromFile.ps1 # Template loading
+│   ├── Select-Project.ps1  # Project selection menu  
+│   ├── Get-ProjectFiles.ps1 # Project file path management
+│   ├── Import-PromptFromQueue.ps1 # Queue loading
+│   └── Move-QueueToHistory.ps1 # History management
+├── template/
+│   └── *.json              # Your prompt templates
+├── turbo-laps-scenelet/    # Example project folder
+│   ├── queue.json          # Task queue
+│   └── history.json        # Processed history
+└── main.ps1               # Main orchestration script
+```
 
-**Drawback:** Requiring a separate pair of MD and PS1 files for each project became inconvenient.
+## **Workflow Options:**
+1. **Template-Only** - Use pre-defined prompts as before
+2. **Queue-Only** - Process tasks from project queues  
+3. **Hybrid** - Use templates as base + queue data for specific tasks (current setup)
 
-### Stage 2: Integrated Prompt Model
+This is indeed a complete prompting solution that balances flexibility with structure. You can easily extend it with additional features like:
 
-A model was defined to structure the prompt data. This stage used a single PS1 file per project to define all prompts. Scripts from the central repository were still used to assemble the prompt data and file contents into the clipboard. A main script allowed for importing all prompts and executing them by name.
-
-**Result:** The output (the assembled prompt text) was still delivered to the clipboard.
-
-### Stage 3: JSON-Based Model
-
-A new, improved model was implemented. This version reads from JSON data and external files, combines them, and places the final prompt into the clipboard.
-
-**Benefits:** The system is now simple (one model class with helpers), flexible, and easily expandable. New, specialized models can be created based on this foundation.
+- **Batch processing** - Process multiple queue items at once
+- **Export/Import** - Share prompts between projects
+- **Statistics** - Track prompt performance metrics
+- **API integration** - Direct LLM API calls
+- **Template editing** - GUI for creating/modifying templates
