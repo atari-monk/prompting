@@ -6,15 +6,15 @@
 . "C:/Atari-Monk-Art/prompting/function/Select-Project.ps1"
 . "C:/Atari-Monk-Art/prompting/function/Get-ProjectFiles.ps1"
 
-# First, load from template as before
+# First, load from template
 $selectedFile = Select-Template -TemplatePath "C:/Atari-Monk-Art/prompting/template" -FileFilter "*.json"
 if ($selectedFile) {
     $prompt = Import-PromptFromFile -FilePath $selectedFile
     if ($prompt) {
-        Write-Host "Loaded from template: $($prompt.Name)" -ForegroundColor Green
+        Write-Host "Loaded from template: Role=$($prompt.Role)" -ForegroundColor Green
         
-        # Select project folder (where queue.json is located)
-        $projectsPath = "C:/Atari-Monk-Art/prompting"  # Root folder containing project folders
+        # Select project folder
+        $projectsPath = "C:/Atari-Monk-Art/prompting"
         $selectedProjectPath = Select-Project -ProjectsPath $projectsPath
         
         if ($selectedProjectPath) {
@@ -40,14 +40,15 @@ if ($selectedFile) {
                         if ($queuePrompt.Task) { $prompt.Task = $queuePrompt.Task }
                         if ($queuePrompt.Requirements) { $prompt.Requirements = $queuePrompt.Requirements }
                         if ($queuePrompt.Paths) { $prompt.Paths = $queuePrompt.Paths }
-                        if ($queuePrompt.Result) { $prompt.Result = $queuePrompt.Result }
+                        if ($queuePrompt.Reasoning) { $prompt.Reasoning = $queuePrompt.Reasoning }
+                        if ($queuePrompt.StopConditions) { $prompt.StopConditions = $queuePrompt.StopConditions }
                         
                         Write-Host "Merged queue data into template" -ForegroundColor Green
                         Write-Host "Task: $($prompt.Task)" -ForegroundColor Cyan
                         Write-Host "Requirements: $($prompt.Requirements.Count)" -ForegroundColor Cyan
                         Write-Host "Paths: $($prompt.Paths.Count)" -ForegroundColor Cyan
                         
-                        # Move the processed item to history (and remove from queue)
+                        # Move the processed item to history
                         $moved = Move-QueueToHistory -QueuePath $queuePath -HistoryPath $historyPath -RemoveFromQueue
                         if ($moved) {
                             Write-Host "Queue item moved to history" -ForegroundColor Green

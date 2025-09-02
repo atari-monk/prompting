@@ -1,9 +1,7 @@
-# Function to load the topmost prompt from a queue file
 function Import-PromptFromQueue {
     param(
         [Parameter(Mandatory=$true)]
-        [string]$QueuePath,
-        [switch]$Force
+        [string]$QueuePath
     )
     
     if (-not (Test-Path $QueuePath)) {
@@ -23,13 +21,14 @@ function Import-PromptFromQueue {
         
         $prompt = [Prompt]::new()
         
-        # Only set fields that exist in the queue item (prompt object)
+        # Only set fields that exist in the queue item
         if ($queueItem.PSObject.Properties['Task']) { $prompt.Task = $queueItem.Task }
         if ($queueItem.PSObject.Properties['Requirements']) { $prompt.Requirements = $queueItem.Requirements }
         if ($queueItem.PSObject.Properties['Paths']) { $prompt.Paths = $queueItem.Paths }
-        if ($queueItem.PSObject.Properties['Result']) { $prompt.Result = $queueItem.Result }
         if ($queueItem.PSObject.Properties['Role']) { $prompt.Role = $queueItem.Role }
         if ($queueItem.PSObject.Properties['OutputFormat']) { $prompt.OutputFormat = $queueItem.OutputFormat }
+        if ($queueItem.PSObject.Properties['Reasoning']) { $prompt.Reasoning = $queueItem.Reasoning }
+        if ($queueItem.PSObject.Properties['StopConditions']) { $prompt.StopConditions = $queueItem.StopConditions }
         
         return $prompt
     }

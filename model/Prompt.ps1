@@ -1,6 +1,3 @@
-# Prompt model version
-$global:PromptModelVersion = "0.0.1"
-
 class Prompt {
     # Required fields (must be provided during construction)
     [string]$Role
@@ -8,30 +5,13 @@ class Prompt {
     [string]$OutputFormat
     
     # Optional fields (can be empty/null)
-    [string]$Context
     [string]$Reasoning
     [string[]]$StopConditions
     [string[]]$Paths
-    [string]$Name
-    [string]$File
     [string[]]$Requirements
-    [string]$Result 
 
-    # System fields (auto-managed)
-    [string]$Status
-    [string]$LLM
-    [datetime]$CreatedDate
-    [datetime]$ModifiedDate
-    [string]$PromptModelVersion = $global:PromptModelVersion
-    
     # Default constructor for deserialization
-    Prompt() {
-        $this.CreatedDate = Get-Date
-        $this.ModifiedDate = Get-Date
-        $this.Status = "Pending"
-        $this.LLM = "DeepSeek"
-        $this.PromptModelVersion = $global:PromptModelVersion
-    }
+    Prompt() {}
     
     # Main constructor with required fields
     Prompt(
@@ -42,11 +22,6 @@ class Prompt {
         $this.Role = $role
         $this.Task = $task
         $this.OutputFormat = $outputFormat
-        $this.CreatedDate = Get-Date
-        $this.ModifiedDate = Get-Date
-        $this.Status = "Pending"
-        $this.LLM = "DeepSeek"
-        $this.PromptModelVersion = $global:PromptModelVersion
     }
     
     # Full constructor with all optional fields
@@ -54,47 +29,18 @@ class Prompt {
         [string]$role,
         [string]$task,
         [string]$outputFormat,
-        [string]$context,
         [string]$reasoning,
         [string[]]$stopConditions,
         [string[]]$paths,
-        [string]$status,
-        [string]$llm,
-        [string]$name,
-        [string]$file,
-        [string[]]$requirements,
-        [string]$result
+        [string[]]$requirements
     ) {
         $this.Role = $role
         $this.Task = $task
         $this.OutputFormat = $outputFormat
-        $this.Context = $context
         $this.Reasoning = $reasoning
         $this.StopConditions = $stopConditions
         $this.Paths = $paths
-        $this.SetStatus($status)
-        $this.LLM = $llm
-        $this.Name = $name
-        $this.File = $file
         $this.Requirements = $requirements
-        $this.Result = $result
-        $this.CreatedDate = Get-Date
-        $this.ModifiedDate = Get-Date
-        $this.PromptModelVersion = $global:PromptModelVersion
-    }
-    
-    [void]SetStatus([string]$status) {
-        $validStatus = @("Pending", "In Progress", "Done", "Blocked", "Archived")
-        if ($status -notin $validStatus) {
-            throw "Status must be one of: $($validStatus -join ', '). Received: '$status'"
-        }
-        $this.Status = $status
-        $this.ModifiedDate = Get-Date
-    }
-    
-    [void]UpdateLLM([string]$newLLM) {
-        $this.LLM = $newLLM
-        $this.ModifiedDate = Get-Date
     }
     
     [string]GetCombinedText() {
@@ -120,13 +66,6 @@ class Prompt {
         }
         
         $combinedText += "Output Format: $($this.OutputFormat)"
-        
-        # Metadata in the order from example
-        $combinedText += "Created: $($this.CreatedDate.ToString('yyyy-MM-dd HH:mm:ss'))"
-        $combinedText += "Last Modified: $($this.ModifiedDate.ToString('yyyy-MM-dd HH:mm:ss'))"
-        $combinedText += "Status: $($this.Status)"
-        $combinedText += "LLM: $($this.LLM)"
-        $combinedText += "Prompt Model Version: $($this.PromptModelVersion)"
         
         if ($this.Paths -and $this.Paths.Count -gt 0) {
             $combinedText += "Paths: $($this.Paths -join ', ')"
@@ -178,11 +117,6 @@ class Prompt {
             $this.Paths = $validPaths
         }
         
-        # Update status
-        if ($this.Status -eq "Pending") {
-            $this.SetStatus("In Progress")
-        }
-        
         # Get enhanced combined text with path contents
         $combinedText = $this.GetCombinedText()
         
@@ -200,31 +134,17 @@ class Prompt {
     # Save to file
     [void]SaveToFile([string]$filePath) {
         $data = @{
-            PromptModelVersion = $this.PromptModelVersion
             Role = $this.Role
             Task = $this.Task
-            OutputFormat = $this.OutputFormat
-            Context = $this.Context
+            Requirements = $this.Requirements
+            Paths = $this.Paths
             Reasoning = $this.Reasoning
             StopConditions = $this.StopConditions
-            Paths = $this.Paths
-            Status = $this.Status
-            LLM = $this.LLM
-            CreatedDate = $this.CreatedDate.ToString('o')
-            ModifiedDate = $this.ModifiedDate.ToString('o')
-            Name = $this.Name
-            File = $this.File
-            Requirements = $this.Requirements
-            Result = $this.Result
+            OutputFormat = $this.OutputFormat
         }
         
         $data | ConvertTo-Json -Depth 3 | Out-File -FilePath $filePath -Encoding UTF8
         Write-Host "Prompt saved to: $filePath" -ForegroundColor Green
-    }
-    
-    # Validate prompt model version compatibility
-    [bool]IsCompatible() {
-        return $this.PromptModelVersion -eq $global:PromptModelVersion
     }
     
     # Helper method to get prompt summary
@@ -237,15 +157,10 @@ class Prompt {
         
         return @"
 Prompt Summary:
-- Name: $(if ($this.Name) { $this.Name } else { "N/A" })
 - Role: $($this.Role)
 - Task: $taskPreview
-- Status: $($this.Status)
-- LLM: $($this.LLM)
-- Prompt Model: $($this.PromptModelVersion)
-- Created: $($this.CreatedDate.ToString('yyyy-MM-dd'))
-- Paths: $(if ($this.Paths) { $this.Paths.Count } else { 0 })
 - Requirements: $(if ($this.Requirements) { $this.Requirements.Count } else { 0 })
+- Paths: $(if ($this.Paths) { $this.Paths.Count } else { 0 })
 "@
     }
 }

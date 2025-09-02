@@ -1,9 +1,6 @@
 {
     "Role": "Senior Developer (typescript)",
-    "StopConditions": ["Requrierments implemented"],
-    "OutputFormat": "Self documenting, latest typescript, do not use any comments",
     "Reasoning": "Use SOLID, best/proven/latest practices",
-    "Status": "Pending",
-    "PromptModelVersion": "0.0.1",
-    "LLM": "DeepSeek"
+    "StopConditions": ["Requrierments implemented"],
+    "OutputFormat": "Self documenting, latest typescript, do not use any comments"
 }
