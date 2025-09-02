@@ -49,9 +49,10 @@ function Move-QueueToHistory {
             }
         }
         
-        # Add timestamp to the prompt item
+        # Add timestamp and empty Result field to the prompt item
         $topItemWithTimestamp = $topItem | Select-Object *
         $topItemWithTimestamp | Add-Member -NotePropertyName "ProcessedDate" -NotePropertyValue (Get-Date -Format "yyyy-MM-dd HH:mm:ss")
+        $topItemWithTimestamp | Add-Member -NotePropertyName "Result" -NotePropertyValue ""
         
         # Add to history at the BOTTOM/END of the array
         $historyData = @($historyData) + @($topItemWithTimestamp)
