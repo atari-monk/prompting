@@ -1,9 +1,0 @@
-[
-    {
-        "Task": "Extend mouse-cursor scene",
-        "Requirements": ["Render clicked points as small red rects, where point is in center"],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts"
-        ]
-    }
-]
