@@ -1,5 +1,5 @@
 {
-    "Role": "Senior Developer",
+    "Role": "Senior Developer (powershell)",
     "StopConditions": ["Requrierments implemented"],
     "OutputFormat": "Self documenting, latest ps1, do not use any comments",
     "Reasoning": "Use SOLID, best/proven/latest practices",

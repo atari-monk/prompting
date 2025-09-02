@@ -40,7 +40,40 @@
             "C:/Atari-Monk-Art/prompting/helpers.ps1",
             "C:/Atari-Monk-Art/prompting/prompt-example.json"
         ],
-        "Result": "",
+        "Result": "This script was deleted",
         "Template": "powershell-dev.json"
+    },
+    {
+        "Task": "New main script",
+        "Requirements": [
+            "In templates/ i have templetes",
+            "generate nr menu with them",
+            "user slects",
+            "load selected templete as prompt"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/prompting/helpers.ps1",
+            "C:/Atari-Monk-Art/prompting/main.ps1",
+            "C:/Atari-Monk-Art/prompting/prompt.json",
+            "C:/Atari-Monk-Art/prompting/templates/typescript-dev.json",
+            "C:/Atari-Monk-Art/prompting/Prompt.ps1"
+        ],
+        "Result": "Old main moved to load-prompt. New main worked."
+    },
+    {
+        "Task": "Extend main script",
+        "Requirements": [
+            "Load prompt.json as prompt",
+            "It has only Task, Requirements, Paths",
+            "Merge that to template"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/prompting/helpers.ps1",
+            "C:/Atari-Monk-Art/prompting/main.ps1",
+            "C:/Atari-Monk-Art/prompting/prompt.json",
+            "C:/Atari-Monk-Art/prompting/templates/typescript-dev.json",
+            "C:/Atari-Monk-Art/prompting/Prompt.ps1"
+        ],
+        "Result": "Extended main worked."
     }
 ]

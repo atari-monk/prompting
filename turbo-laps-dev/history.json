@@ -144,5 +144,21 @@
         ],
         "Result": "LapTracker is beeing tested without dependencies on other scenes",
         "Template": "typescript-dev.json"
+    },
+    {
+        "Task": "Implement new scene",
+        "Requirements": [
+            "Implement Scene interface",
+            "Use input from engine",
+            "Print coords of mouse cursor"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/zippy-game-engine/src/interfaces/scene.ts",
+            "C:/Atari-Monk-Art/zippy-game-engine/src/systems/input/input-system.ts",
+            "C:/Atari-Monk-Art/zippy-game-engine/src/systems/input/mouse-system.ts"
+        ],
+        "Result": "New mouse-cursor scene",
+        "CreatedDate": "2025-09-01T17:42:13.7016739+02:00",
+        "Template": "typescript-dev.json"
     }
 ]
