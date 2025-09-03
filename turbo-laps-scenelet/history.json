@@ -1,1 +1,51 @@
-[]
+[
+    {
+        "Task": "Extend mouse-cursor scene",
+        "Requirements": [
+            "Render clicked points as small red rects, where point is in center"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts"
+        ],
+        "ProcessedDate": "2025-09-02 22:19:24",
+        "Result": "Failed, to little context"
+    },
+    {
+        "Task": "Extend mouse-cursor scene",
+        "Requirements": [
+            "Render clicked points as small red rects, where point is in center"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts",
+            "C:/Atari-Monk-Art/zippy-game-engine/src/interfaces/scene.ts"
+        ],
+        "ProcessedDate": "2025-09-02 22:25:36",
+        "Result": "Better but fail, on click points and currsor are shifted"
+    },
+    {
+        "Task": "Extend mouse-cursor scene",
+        "Requirements": [
+            "Render clicked points as small red rects, where point is in center",
+            "Better but fail, on click points and currsor are shifted",
+            "I think scaling in continue.ts might help"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts",
+            "C:/Atari-Monk-Art/zippy-game-engine/src/interfaces/scene.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/continue.ts"
+        ],
+        "ProcessedDate": "2025-09-02 22:31:51",
+        "Result": "It works but i need points to copy from console so print"
+    },
+    {
+        "Task": "Extend mouse-cursor scene",
+        "Requirements": [
+            "It works but i need points to copy from console so print"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts"
+        ],
+        "ProcessedDate": "2025-09-02 22:35:50",
+        "Result": "Works, i got points on track to test lap tracker without dependency on player position"
+    }
+]

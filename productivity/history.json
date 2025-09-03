@@ -1,0 +1,70 @@
+[
+  {
+    "Task": "Script to convert text",
+    "Requirements": [
+      "I need new script reqs-md-json.py to convert text",
+      "- text\n- text\n- text...",
+      "\"text\",\n\"text\",\n\"text\",\n...",
+      "Get text form clipboard",
+      "Convert it and put it back to clipboard",
+      "Add a debug flag, print input and output when flag given"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/scripts/reqs-md-json.py"
+    ],
+    "ProcessedDate": "2025-09-03 14:25:55",
+    "Result": "Script works"
+  },
+  {
+    "Task": "Script to help with loging",
+    "Requirements": [
+      "I need new script log.py",
+      "Ask for project name",
+      "Check path C:/Atari-Monk-Art/productivity/content/format-2/ if file project-name.md exists",
+      "If file needs to be generated add header '# project-name\n'",
+      "When flag -start is given append '## Session yyyy-mm-dd hh:mm'",
+      "When flag -note is given append note",
+      "When flag -state is given print last session content or given number of them",
+      "When flag -end is given find last record and append - hh:mm xh ym (calculate duration)"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/productivity/scripts/log.py",
+      "C:/Atari-Monk-Art/productivity/docs/format-2.md"
+    ],
+    "ProcessedDate": "2025-09-03 15:50:11",
+    "Result": "Script works"
+  },
+  {
+    "Task": "Script to convert file",
+    "Requirements": [
+      "I need new script convert.py",
+      "Ask for project name",
+      "Check path C:/Atari-Monk-Art/productivity/content/format-1/ if file project-name.yaml exists proceed else inform no file",
+      "Convert file to format-2.md",
+      "Save file as C:/Atari-Monk-Art/productivity/content/format-2/project-name.md"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/productivity/scripts/convert.py",
+      "C:/Atari-Monk-Art/productivity/docs/format-1.md",
+      "C:/Atari-Monk-Art/productivity/docs/format-2.md"
+    ],
+    "ProcessedDate": "2025-09-03 16:25:21",
+    "Result": "Script works"
+  },
+  {
+    "Task": "Fix loging script",
+    "Requirements": [
+      "Script works but format is off",
+      "There is not empty lines like in format doc",
+      "For example when note is added it should be empty line if it is after session but not when it is under other note",
+      "Above session there should allways be empty line",
+      "When ending session format should hold"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/productivity/scripts/log.py",
+      "C:/Atari-Monk-Art/productivity/docs/format-2.md"
+    ],
+    "ProcessedDate": "2025-09-03 16:39:13",
+    "Result": ""
+  }
+]
