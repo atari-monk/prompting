@@ -47,5 +47,29 @@
         ],
         "ProcessedDate": "2025-09-02 22:35:50",
         "Result": "Works, i got points on track to test lap tracker without dependency on player position"
+    },
+    {
+        "Task": "Refactor factory",
+        "Requirements": [
+            "Based on LapTrackerFactory create a method in MultiSceneTestFactory for TRACK_RACE_LAPS"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory-old/lap-tracker-factory.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/multi-scene-test-factory.ts"
+        ],
+        "ProcessedDate": "2025-09-04 16:27:04",
+        "Result": "It mostly worked out of the box"
+    },
+    {
+        "Task": "Refactor factory",
+        "Requirements": [
+            "Based on ContinueFactory create a method in MultiSceneTestFactory for RACE_RESTART"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory-old/continue-factory.ts",
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/multi-scene-test-factory.ts"
+        ],
+        "ProcessedDate": "2025-09-04 16:54:51",
+        "Result": "It mostly worked out of the box"
     }
 ]
