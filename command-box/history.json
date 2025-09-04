@@ -1,0 +1,18 @@
+[
+    {
+        "Task": "Script to run proj",
+        "Requirements": [
+            "Write ps1 script to run this project locally",
+            "It needs to run searching service and web page hosting",
+            "If possible do it with one powershell instance, if not more or find some proper way",
+            "Use proj path:",
+            "C:/Atari-Monk-Art/command-box"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/scripts/scripts/command-box/run.ps1",
+            "C:/Atari-Monk-Art/dev-blog/content/projects/command-box/3.-mvp.md"
+        ],
+        "ProcessedDate": "2025-09-04 18:14:18",
+        "Result": "It worked, make alias for it"
+    }
+]

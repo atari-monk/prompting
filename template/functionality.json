@@ -1,0 +1,12 @@
+{
+    "Role": "Senior Developer (Documenting)",
+    "Task": "Code Functionality Analysis",
+    "Requirements": [
+        "Analyze the code and produce a concise bullet-point list describing its functionality, focusing on behavior and purpose."
+    ],
+    "Reasoning": "Focus of informing user on what code does.",
+    "StopConditions": [
+        "Functionality described as a fast helper to understand unit of code"
+    ],
+    "OutputFormat": "Markdown file with links index to each item with functionality list."
+}

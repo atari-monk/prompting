@@ -1,0 +1,37 @@
+[
+    {
+        "Task": "Convert path script",
+        "Requirements": [
+            "ps1 script",
+            "Take clipboard",
+            "It has path",
+            "Convert it to path with /",
+            "Put it back to clipboard"
+        ],
+        "Paths": ["C:/Atari-Monk-Art/scripts/scripts/utilities/path.ps1"],
+        "ProcessedDate": "2025-09-04 21:21:31",
+        "Result": "Works, made it entrypoint and print info function update"
+    },
+    {
+        "Task": "Run browser with deepseek",
+        "Requirements": [
+            "ps1 script",
+            "run chrome or firefox, depending on option",
+            "open page https://chat.deepseek.com"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/scripts/scripts/prompting_project/open_llm.ps1"
+        ],
+        "ProcessedDate": "2025-09-04 21:53:49",
+        "Result": "Works, made it entrypoint and print info function update"
+    },
+    {
+        "Paths": [
+            "C:/Atari-Monk-Art/scripts/scripts/prompting_project/open_llm.ps1",
+            "C:/Atari-Monk-Art/scripts/scripts/prompting_project/list_md_json.py",
+            "C:/Atari-Monk-Art/scripts/scripts/prompting_project/prompt.ps1"
+        ],
+        "ProcessedDate": "2025-09-04 22:35:45",
+        "Result": "Test for functionality prompt template, works. Moved doc to dev-blog."
+    }
+]
