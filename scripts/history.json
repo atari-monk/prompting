@@ -33,5 +33,48 @@
         ],
         "ProcessedDate": "2025-09-04 22:35:45",
         "Result": "Test for functionality prompt template, works. Moved doc to dev-blog."
+    },
+    {
+        "Task": "Script to move logs",
+        "Requirements": [
+            "Source is in format-2",
+            "Destination is in logs",
+            "First remove logs (all md files from logs)",
+            "Then move md files from format-2 to logs",
+            "Log operation",
+            "Handle errors"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/productivity/content/format-2",
+            "C:/Atari-Monk-Art/dev-blog/content/projects/productivity/logs"
+        ],
+        "ProcessedDate": "2025-09-05 12:59:46",
+        "Result": "Messed up my files"
+    },
+    {
+        "Task": "Script to commit and push",
+        "Requirements": [
+            "Script must cd path to run these commands",
+            "State flag that will print last commit info",
+            "Commit flag that runs command: git add . && git commit -m \"Update content\" && git push origin master",
+            "Override flag that runs command: git add . && git commit -m \"Update content\" && git push origin master",
+            "Print help to tell user these flags are mandatory",
+            "Named flag where we input commit message (instead \"Update content\", take from input)"
+        ],
+        "Paths": ["C:/Atari-Monk-Art/dev-blog"],
+        "ProcessedDate": "2025-09-05 13:21:55",
+        "Result": "Seems to work"
+    },
+    {
+        "Task": "Fix script to move logs",
+        "Requirements": [
+            "Copy files! Do not toutch then in source, just copy to destination"
+        ],
+        "Paths": [
+            "I needed to recover my files after this script",
+            "C:/Atari-Monk-Art/scripts/scripts/productivity/productivity_to_blog.ps1"
+        ],
+        "ProcessedDate": "2025-09-05 13:56:22",
+        "Result": "Fixed by hand"
     }
 ]
