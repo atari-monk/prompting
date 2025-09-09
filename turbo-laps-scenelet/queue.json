@@ -1,20 +1,30 @@
 [
-  {
-    "Task": "",
-    "Requirements": [
-      ""
-    ],
-    "Paths": [
-      ""
-    ]
-  },
-  {
-    "Task": "",
-    "Requirements": [
-      ""
-    ],
-    "Paths": [
-      ""
-    ]
-  }
+    {
+        "Task": "Add a boolean flag to toggle the countdown overlay rendering on/off",
+        "Requirements": [
+            "Add a public boolean property 'showOverlay' to the Countdown class with default value true",
+            "Modify the render() method to check the showOverlay flag before drawing the semi-transparent black background",
+            "Ensure the countdown numbers and GO! text are still visible even when overlay is disabled",
+            "Maintain all existing functionality while adding this toggle feature"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/countdown.ts"
+        ]
+    },
+    {
+        "Task": "Fix skid sound issue where it plays when race ends and car is reset",
+        "Requirements": [
+            "Skid sound should only play during skid events",
+            "Skid events should be marked by high speed and turning maneuvers",
+            "Prevent skid sound from playing when race ends or car is reset"
+        ],
+        "Paths": [
+            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+        ]
+    },
+    {
+        "Task": "",
+        "Requirements": [""],
+        "Paths": [""]
+    }
 ]
