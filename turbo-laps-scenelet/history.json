@@ -1,344 +1,707 @@
 [
-    {
-        "Task": "Extend mouse-cursor scene",
-        "Requirements": [
-            "Render clicked points as small red rects, where point is in center"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts"
-        ],
-        "ProcessedDate": "2025-09-02 22:19:24",
-        "Result": "Failed, to little context"
-    },
-    {
-        "Task": "Extend mouse-cursor scene",
-        "Requirements": [
-            "Render clicked points as small red rects, where point is in center"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts",
-            "C:/Atari-Monk-Art/zippy-game-engine/src/interfaces/scene.ts"
-        ],
-        "ProcessedDate": "2025-09-02 22:25:36",
-        "Result": "Better but fail, on click points and currsor are shifted"
-    },
-    {
-        "Task": "Extend mouse-cursor scene",
-        "Requirements": [
-            "Render clicked points as small red rects, where point is in center",
-            "Better but fail, on click points and currsor are shifted",
-            "I think scaling in continue.ts might help"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts",
-            "C:/Atari-Monk-Art/zippy-game-engine/src/interfaces/scene.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/continue.ts"
-        ],
-        "ProcessedDate": "2025-09-02 22:31:51",
-        "Result": "It works but i need points to copy from console so print"
-    },
-    {
-        "Task": "Extend mouse-cursor scene",
-        "Requirements": [
-            "It works but i need points to copy from console so print"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts"
-        ],
-        "ProcessedDate": "2025-09-02 22:35:50",
-        "Result": "Works, i got points on track to test lap tracker without dependency on player position"
-    },
-    {
-        "Task": "Refactor factory",
-        "Requirements": [
-            "Based on LapTrackerFactory create a method in MultiSceneTestFactory for TRACK_RACE_LAPS"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory-old/lap-tracker-factory.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/multi-scene-test-factory.ts"
-        ],
-        "ProcessedDate": "2025-09-04 16:27:04",
-        "Result": "It mostly worked out of the box"
-    },
-    {
-        "Task": "Refactor factory",
-        "Requirements": [
-            "Based on ContinueFactory create a method in MultiSceneTestFactory for RACE_RESTART"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory-old/continue-factory.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/multi-scene-test-factory.ts"
-        ],
-        "ProcessedDate": "2025-09-04 16:54:51",
-        "Result": "It mostly worked out of the box"
-    },
-    {
-        "Task": "Add Menu to factory",
-        "Requirements": [
-            "Check if present",
-            "If not add factory method for menu scene"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/scene-instance-factory.ts",
-            "C:/Atari-Monk-Art/turbo-laps/src/scenes/menu.ts"
-        ],
-        "ProcessedDate": "2025-09-05 16:36:15",
-        "Result": "Works"
-    },
-    {
-        "Task": "Menu single scene test",
-        "Requirements": [
-            "Add method for menu scene to single scene test factory"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/scene-instance-factory.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/single-scene-test-factory.ts",
-            "C:/Atari-Monk-Art/turbo-laps/src/scenes/menu.ts"
-        ],
-        "ProcessedDate": "2025-09-05 16:42:58",
-        "Result": "Works"
-    },
-    {
-        "Task": "Extend class",
-        "Requirements": ["I need to toogle menu scene"],
-        "Paths": ["C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/menu.ts"],
-        "ProcessedDate": "2025-09-05 20:08:38",
-        "Result": "Works"
-    },
-    {
-        "Task": "Refactor classes",
-        "Requirements": [
-            "Do interface for lap-tracker so i can use it in game-score to DI and mock it"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/lap-tracker.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/game-score.ts"
-        ],
-        "ProcessedDate": "2025-09-05 22:00:48",
-        "Result": "Works"
-    },
-    {
-        "Task": "Builder template",
-        "Requirements": [
-            "Give me a template for a builder where i can add feature by feature",
-            "I use instance factory",
-            "Lets start from simple builder"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/scene-instance-factory.ts"
-        ],
-        "ProcessedDate": "2025-09-06 22:24:17",
-        "Result": "Builder template was provided, i implemented game builder as it was a bit hard to put to prompt"
-    },
-    {
-        "Task": "I need to reposition score",
-        "Requirements": ["It's bottom should be in left bottom"],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/game-score.ts"
-        ],
-        "ProcessedDate": "2025-09-08 10:56:25",
-        "Result": "Works"
-    },
-    {
-        "Task": "Add color to last score",
-        "Requirements": [
-            "I have list of 5 best times here but newly added result should be red so i can know witch time i got",
-            "What i mean is, if i end a race, time score from this race should be red",
-            "When i finish next race, time from this one should be red, so i now witch time was last"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/game-score.ts"
-        ],
-        "ProcessedDate": "2025-09-08 11:27:34",
-        "Result": "Works after second attempt"
-    },
-    {
-        "Task": "Sound Scene",
-        "Requirements": [
-            "I need a scene playing sound",
-            "Maybe a service loading audio files",
-            "With basic ability to play it"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/zippy-game-engine/src/interfaces/scene.ts"
-        ],
-        "ProcessedDate": "2025-09-08 11:50:34",
-        "Result": "Needed some context filling and changes"
-    },
-    {
-        "Task": "Fixing",
-        "Requirements": [
-            "Its taking formt but few changes are needed",
-            "'audioContext' is declared but its value is never read.",
-            "Property 'renderer' does not exist on type 'FrameContext'."
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/sound-scene-factory.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/sound-scene.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/service/web-audio-service.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/type/audio-service.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/type/play-options.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/type/sound-config.ts",
-            "C:/Atari-Monk-Art/zippy-shared-lib/src/frame-context.ts"
-        ],
-        "ProcessedDate": "2025-09-08 12:36:46",
-        "Result": "Works, with delay for loading sounds before playing"
-    },
-    {
-        "Task": "Introduce sprite",
-        "Requirements": [
-            "Move my current car representation to method and toogle it with config",
-            "Add a sprite, race_car.png support, turn it off when first representation is on",
-            "I want a nice image from sprite, it should be similar in size as forst representation"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
-        ],
-        "ProcessedDate": "2025-09-08 15:41:14",
-        "Result": "Worked"
-    },
-    {
-        "Task": "Sound for car",
-        "Requirements": ["How to implement sounds for car ?"],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/sound-scene.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
-        ],
-        "ProcessedDate": "2025-09-08 17:23:40",
-        "Result": "Lacks a bit context"
-    },
-    {
-        "Task": "Fix this",
-        "Requirements": [
-            "Property 'setSoundPitch' does not exist on type 'AudioService'.",
-            "Object literal may only specify known properties, and 'interrupt' does not exist in type 'PlayOptions'."
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/service/web-audio-service.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/type/play-options.ts"
-        ],
-        "ProcessedDate": "2025-09-08 17:32:33",
-        "Result": "Works"
-    },
-    {
-        "Task": "Engine sound",
-        "Requirements": [
-            "I need to generate car-engine.wav",
-            "Use py or ps1",
-            "Whatever works best",
-            "It should be engine of formula 1",
-            "Can u generate realistic sound for it ?"
-        ],
-        "ProcessedDate": "2025-09-08 17:46:24",
-        "Result": "Works"
-    },
-    {
-        "Task": "Engine sound seam",
-        "Requirements": [
-            "2s engine sound loops but there is a slight jump/seam beetween played sound, why ?"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine_config.json",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine.py",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/service/web-audio-service.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
-        ],
-        "ProcessedDate": "2025-09-08 18:28:03",
-        "Result": "Fixed by having long audio"
-    },
-    {
-        "Task": "Car horn sound",
-        "Requirements": [
-            "I have engine sound",
-            "Now i need car-horn.wav sound",
-            "Can u generate horn for formula 1 ?"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine_config.json",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine.py"
-        ],
-        "ProcessedDate": "2025-09-08 20:04:57",
-        "Result": "Works"
-    },
-    {
-        "Task": "Car skid sound",
-        "Requirements": [
-            "I have engine sound",
-            "Now i need car-skid.wav sound",
-            "Generate it most authentic u can"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine_config.json",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine.py"
-        ],
-        "ProcessedDate": "2025-09-08 21:07:06",
-        "Result": "Worked"
-    },
-    {
-        "Task": "Car crash sound",
-        "Requirements": [
-            "I have engine sound",
-            "Now i need car-crash.wav sound",
-            "Generate it most authentic u can"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine_config.json",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine.py"
-        ],
-        "ProcessedDate": "2025-09-08 21:09:18",
-        "Result": "Worked but needs fixes"
-    },
-    {
-        "Task": "Car crash sound",
-        "Requirements": [
-            "Expand script to implement parts defined in config but missing in script",
-            "For example metal_crumple_amplitude",
-            "Make sure config is implemented in script",
-            "Produce authentic car crash sound"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/crash.json",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/crash.py"
-        ],
-        "ProcessedDate": "2025-09-08 21:38:36",
-        "Result": "Worked"
-    },
-    {
-        "Task": "Crash sound",
-        "Requirements": [
-            "I need to invoke crash sound when car is out of track"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/track-boundary.ts"
-        ],
-        "ProcessedDate": "2025-09-08 21:51:40",
-        "Result": "Worked"
-    },
-    {
-        "Task": "Design prompt",
-        "Requirements": ["I would like a flag to toogle overlay"],
-        "Paths": [
-            "C:/Atari-Monk-Art/prompting/template/queue_template.json",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/countdown.ts"
-        ],
-        "ProcessedDate": "2025-09-09 07:47:23",
-        "Result": "Produced prompt"
-    },
-    {
-        "Task": "Design prompt",
-        "Requirements": [
-            "There is problem with skid sound",
-            "It is emited when race ends and car is reset",
-            "it should be on skid event",
-            "skid should be marked by high speed and doing turning maneuver"
-        ],
-        "Paths": [
-            "C:/Atari-Monk-Art/prompting/template/queue_template.json",
-            "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
-        ],
-        "ProcessedDate": "2025-09-09 07:54:06",
-        "Result": "Produced prompt"
-    }
+  {
+    "Task": "Extend mouse-cursor scene",
+    "Requirements": [
+      "Render clicked points as small red rects, where point is in center"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts"
+    ],
+    "ProcessedDate": "2025-09-02 22:19:24",
+    "Result": "Failed, to little context"
+  },
+  {
+    "Task": "Extend mouse-cursor scene",
+    "Requirements": [
+      "Render clicked points as small red rects, where point is in center"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts",
+      "C:/Atari-Monk-Art/zippy-game-engine/src/interfaces/scene.ts"
+    ],
+    "ProcessedDate": "2025-09-02 22:25:36",
+    "Result": "Better but fail, on click points and currsor are shifted"
+  },
+  {
+    "Task": "Extend mouse-cursor scene",
+    "Requirements": [
+      "Render clicked points as small red rects, where point is in center",
+      "Better but fail, on click points and currsor are shifted",
+      "I think scaling in continue.ts might help"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts",
+      "C:/Atari-Monk-Art/zippy-game-engine/src/interfaces/scene.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/continue.ts"
+    ],
+    "ProcessedDate": "2025-09-02 22:31:51",
+    "Result": "It works but i need points to copy from console so print"
+  },
+  {
+    "Task": "Extend mouse-cursor scene",
+    "Requirements": [
+      "It works but i need points to copy from console so print"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/mouse-cursor.ts"
+    ],
+    "ProcessedDate": "2025-09-02 22:35:50",
+    "Result": "Works, i got points on track to test lap tracker without dependency on player position"
+  },
+  {
+    "Task": "Refactor factory",
+    "Requirements": [
+      "Based on LapTrackerFactory create a method in MultiSceneTestFactory for TRACK_RACE_LAPS"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory-old/lap-tracker-factory.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/multi-scene-test-factory.ts"
+    ],
+    "ProcessedDate": "2025-09-04 16:27:04",
+    "Result": "It mostly worked out of the box"
+  },
+  {
+    "Task": "Refactor factory",
+    "Requirements": [
+      "Based on ContinueFactory create a method in MultiSceneTestFactory for RACE_RESTART"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory-old/continue-factory.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/multi-scene-test-factory.ts"
+    ],
+    "ProcessedDate": "2025-09-04 16:54:51",
+    "Result": "It mostly worked out of the box"
+  },
+  {
+    "Task": "Add Menu to factory",
+    "Requirements": [
+      "Check if present",
+      "If not add factory method for menu scene"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/scene-instance-factory.ts",
+      "C:/Atari-Monk-Art/turbo-laps/src/scenes/menu.ts"
+    ],
+    "ProcessedDate": "2025-09-05 16:36:15",
+    "Result": "Works"
+  },
+  {
+    "Task": "Menu single scene test",
+    "Requirements": [
+      "Add method for menu scene to single scene test factory"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/scene-instance-factory.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/single-scene-test-factory.ts",
+      "C:/Atari-Monk-Art/turbo-laps/src/scenes/menu.ts"
+    ],
+    "ProcessedDate": "2025-09-05 16:42:58",
+    "Result": "Works"
+  },
+  {
+    "Task": "Extend class",
+    "Requirements": [
+      "I need to toogle menu scene"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/menu.ts"
+    ],
+    "ProcessedDate": "2025-09-05 20:08:38",
+    "Result": "Works"
+  },
+  {
+    "Task": "Refactor classes",
+    "Requirements": [
+      "Do interface for lap-tracker so i can use it in game-score to DI and mock it"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/lap-tracker.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/game-score.ts"
+    ],
+    "ProcessedDate": "2025-09-05 22:00:48",
+    "Result": "Works"
+  },
+  {
+    "Task": "Builder template",
+    "Requirements": [
+      "Give me a template for a builder where i can add feature by feature",
+      "I use instance factory",
+      "Lets start from simple builder"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/scene-instance-factory.ts"
+    ],
+    "ProcessedDate": "2025-09-06 22:24:17",
+    "Result": "Builder template was provided, i implemented game builder as it was a bit hard to put to prompt"
+  },
+  {
+    "Task": "I need to reposition score",
+    "Requirements": [
+      "It's bottom should be in left bottom"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/game-score.ts"
+    ],
+    "ProcessedDate": "2025-09-08 10:56:25",
+    "Result": "Works"
+  },
+  {
+    "Task": "Add color to last score",
+    "Requirements": [
+      "I have list of 5 best times here but newly added result should be red so i can know witch time i got",
+      "What i mean is, if i end a race, time score from this race should be red",
+      "When i finish next race, time from this one should be red, so i now witch time was last"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scenes/game-score.ts"
+    ],
+    "ProcessedDate": "2025-09-08 11:27:34",
+    "Result": "Works after second attempt"
+  },
+  {
+    "Task": "Sound Scene",
+    "Requirements": [
+      "I need a scene playing sound",
+      "Maybe a service loading audio files",
+      "With basic ability to play it"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/zippy-game-engine/src/interfaces/scene.ts"
+    ],
+    "ProcessedDate": "2025-09-08 11:50:34",
+    "Result": "Needed some context filling and changes"
+  },
+  {
+    "Task": "Fixing",
+    "Requirements": [
+      "Its taking formt but few changes are needed",
+      "'audioContext' is declared but its value is never read.",
+      "Property 'renderer' does not exist on type 'FrameContext'."
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/factory/sound-scene-factory.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/sound-scene.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/service/web-audio-service.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/type/audio-service.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/type/play-options.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/type/sound-config.ts",
+      "C:/Atari-Monk-Art/zippy-shared-lib/src/frame-context.ts"
+    ],
+    "ProcessedDate": "2025-09-08 12:36:46",
+    "Result": "Works, with delay for loading sounds before playing"
+  },
+  {
+    "Task": "Introduce sprite",
+    "Requirements": [
+      "Move my current car representation to method and toogle it with config",
+      "Add a sprite, race_car.png support, turn it off when first representation is on",
+      "I want a nice image from sprite, it should be similar in size as forst representation"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-08 15:41:14",
+    "Result": "Worked"
+  },
+  {
+    "Task": "Sound for car",
+    "Requirements": [
+      "How to implement sounds for car ?"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/sound-scene.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-08 17:23:40",
+    "Result": "Lacks a bit context"
+  },
+  {
+    "Task": "Fix this",
+    "Requirements": [
+      "Property 'setSoundPitch' does not exist on type 'AudioService'.",
+      "Object literal may only specify known properties, and 'interrupt' does not exist in type 'PlayOptions'."
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/service/web-audio-service.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/type/play-options.ts"
+    ],
+    "ProcessedDate": "2025-09-08 17:32:33",
+    "Result": "Works"
+  },
+  {
+    "Task": "Engine sound",
+    "Requirements": [
+      "I need to generate car-engine.wav",
+      "Use py or ps1",
+      "Whatever works best",
+      "It should be engine of formula 1",
+      "Can u generate realistic sound for it ?"
+    ],
+    "ProcessedDate": "2025-09-08 17:46:24",
+    "Result": "Works"
+  },
+  {
+    "Task": "Engine sound seam",
+    "Requirements": [
+      "2s engine sound loops but there is a slight jump/seam beetween played sound, why ?"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine_config.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine.py",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/service/web-audio-service.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-08 18:28:03",
+    "Result": "Fixed by having long audio"
+  },
+  {
+    "Task": "Car horn sound",
+    "Requirements": [
+      "I have engine sound",
+      "Now i need car-horn.wav sound",
+      "Can u generate horn for formula 1 ?"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine_config.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine.py"
+    ],
+    "ProcessedDate": "2025-09-08 20:04:57",
+    "Result": "Works"
+  },
+  {
+    "Task": "Car skid sound",
+    "Requirements": [
+      "I have engine sound",
+      "Now i need car-skid.wav sound",
+      "Generate it most authentic u can"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine_config.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine.py"
+    ],
+    "ProcessedDate": "2025-09-08 21:07:06",
+    "Result": "Worked"
+  },
+  {
+    "Task": "Car crash sound",
+    "Requirements": [
+      "I have engine sound",
+      "Now i need car-crash.wav sound",
+      "Generate it most authentic u can"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine_config.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/engine.py"
+    ],
+    "ProcessedDate": "2025-09-08 21:09:18",
+    "Result": "Worked but needs fixes"
+  },
+  {
+    "Task": "Car crash sound",
+    "Requirements": [
+      "Expand script to implement parts defined in config but missing in script",
+      "For example metal_crumple_amplitude",
+      "Make sure config is implemented in script",
+      "Produce authentic car crash sound"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/crash.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/script/crash.py"
+    ],
+    "ProcessedDate": "2025-09-08 21:38:36",
+    "Result": "Worked"
+  },
+  {
+    "Task": "Crash sound",
+    "Requirements": [
+      "I need to invoke crash sound when car is out of track"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/track-boundary.ts"
+    ],
+    "ProcessedDate": "2025-09-08 21:51:40",
+    "Result": "Worked"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "I would like a flag to toogle overlay"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/countdown.ts"
+    ],
+    "ProcessedDate": "2025-09-09 07:47:23",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "There is problem with skid sound",
+      "It is emited when race ends and car is reset",
+      "it should be on skid event",
+      "skid should be marked by high speed and doing turning maneuver"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 07:54:06",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "There is a problem in lap-tracker",
+      "Time form sector 4 is not visible since after crossing start grid, reset occurs",
+      "How to resolve this"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/lap-tracker.ts"
+    ],
+    "ProcessedDate": "2025-09-09 08:10:32",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "I need to toogle these margins that delay out of bounds for car",
+      "When off, out of bounds is just out of track",
+      "if on there is a margin where car is out off road and off-track is not activated for this part"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/track-boundary.ts"
+    ],
+    "ProcessedDate": "2025-09-09 08:16:55",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "I need new class similar to arrow-player",
+      "It should have new mechanic for car",
+      "There should be increasing speed when arrow is hold, to the point where its hard to controls car",
+      "we should introduce mechanics to make this game hard and skill based"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 08:22:39",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "We probably should not allow player to accelerate when he is out of track, except when he is in direction witch will make him back on the road",
+      "do it on flags so we can toogle it for testing this features to see witch works"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/track-boundary.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 08:31:53",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "When out of the track just stop car comepletly and after 2s make it back on track clockwise",
+      "Do this feature on toogle flag so i can test it in isolation and not break anything"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/track-boundary.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 08:37:49",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "I need markings symetric with same length beetwem them",
+      "currently ones on curves seem have more distance beetwen them than those on straight road parts",
+      "Also region where curves and straight roads connect is problematic, especially in one place"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/road-markings.ts"
+    ],
+    "ProcessedDate": "2025-09-09 08:43:58",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "I need out of track text in the center of screen"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/track-boundary.ts"
+    ],
+    "ProcessedDate": "2025-09-09 08:49:37",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "Starting grid should be in size of the car",
+      "Lets set it based on that"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/starting-grid.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 08:57:33",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Design prompt",
+    "Requirements": [
+      "I need some config to set how many laps race should have",
+      "When i test i like to have 1",
+      "For a game it should be at least 5",
+      "I need this to be configurable"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/prompting/template/queue_template.json",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/lap-tracker",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/menu.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/game-score.ts"
+    ],
+    "ProcessedDate": "2025-09-09 08:57:46",
+    "Result": "Prompt produced"
+  },
+  {
+    "Task": "Add configurable lap count system with default of 5 laps for game and 1 lap for testing",
+    "Requirements": [
+      "Create lap configuration system with default values",
+      "Update menu to display current lap setting",
+      "Add UI controls to modify lap count in menu",
+      "Update game score to handle variable lap counts"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/menu.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/game-score.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/lap-tracker.ts"
+    ],
+    "ProcessedDate": "2025-09-09 10:04:09",
+    "Result": "Generated, lots of bugs"
+  },
+  {
+    "Requirements": [
+      "Promblem is these grafic buttons gets click 5 times per one click",
+      "They should increment by 1 but handler is called 5 times so it increments by 5, button mechanism is broken",
+      "When we set laps in menu we need to set it evrywhere, maybe we need some service"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/service/track-config.service.ts"
+    ],
+    "ProcessedDate": "2025-09-09 10:34:22",
+    "Result": "Fixed some"
+  },
+  {
+    "Requirements": [
+      "Problem is i can increment laps when i debug adjustLapCount",
+      "But when i click normally nothing happens"
+    ],
+    "ProcessedDate": "2025-09-09 10:47:03",
+    "Result": "Fixed some"
+  },
+  {
+    "Task": "Fix issue",
+    "Requirements": [
+      "In menu 'wasHovered' is declared but its value is never read",
+      "Buttons for lap config are over start button they should be below and add label Select Lap count"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/menu.ts"
+    ],
+    "ProcessedDate": "2025-09-09 10:58:46",
+    "Result": "Fixed by removing some code"
+  },
+  {
+    "Task": "Modify the StartingGrid class to size the grid based on the car dimensions from ArrowPlayer, ensuring the grid stripes are appropriately scaled to the car width and the starting position offset accounts for car height",
+    "Requirements": [
+      "Calculate stripeWidth based on car width (e.g., stripeWidth = carWidth / stripeCount)",
+      "Set stripeLength proportional to car height (e.g., stripeLength = carHeight * 1.2)",
+      "Adjust offset to position car properly relative to grid (e.g., offset = carHeight / 2 + padding)",
+      "Ensure grid total width accommodates car width with proper spacing",
+      "Maintain visual consistency between grid size and car dimensions"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/starting-grid.ts",
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 11:59:18",
+    "Result": "Turned out just setting stripes count to 11 and transparency to .4 looks better. 2 lines of code"
+  },
+  {
+    "Task": "Enhance the off-track warning text to be more prominent and centered on screen with visual effects",
+    "Requirements": [
+      "Make off-track text larger and more visible",
+      "Add pulsing animation to draw attention",
+      "Center text both horizontally and vertically",
+      "Add countdown timer showing time until reset"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/track-boundary.ts"
+    ],
+    "ProcessedDate": "2025-09-09 12:40:53",
+    "Result": "Worked, timer got unit ms/s bug"
+  },
+  {
+    "Task": "Reset car",
+    "Requirements": [
+      "After 3s off track add code to reset car",
+      "IPlayer has setStartingPosition"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/track-boundary.ts"
+    ],
+    "ProcessedDate": "2025-09-09 13:56:19",
+    "Result": "Works"
+  },
+  {
+    "Task": "Add a boolean flag to toggle the countdown overlay rendering on/off",
+    "Requirements": [
+      "Add a public boolean property 'showOverlay' to the Countdown class with default value true",
+      "Modify the render() method to check the showOverlay flag before drawing the semi-transparent black background",
+      "Ensure the countdown numbers and GO! text are still visible even when overlay is disabled",
+      "Maintain all existing functionality while adding this toggle feature"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/countdown.ts"
+    ],
+    "ProcessedDate": "2025-09-09 15:03:56",
+    "Result": "Works"
+  },
+  {
+    "Task": "Add a boolean flag to toggle the continue overlay rendering on/off",
+    "Requirements": [
+      "Add a public boolean property 'showOverlay' to the Continue class with default value true",
+      "Modify the render() method to check the showOverlay flag before drawing the semi-transparent black background",
+      "Maintain all existing functionality while adding this toggle feature"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/continue.ts"
+    ],
+    "ProcessedDate": "2025-09-09 15:12:18",
+    "Result": "Works"
+  },
+  {
+    "Task": "Add toggleable margin system for track boundary detection with configurable on/off state and margin offsets",
+    "Requirements": [
+      "Add enableMargins boolean configuration to toggle margin system on/off",
+      "When margins are off, use original track boundaries without offset margins",
+      "When margins are on, apply outerBoundaryOffset and innerBoundaryOffset values",
+      "Maintain backward compatibility with existing configuration",
+      "Add method to toggle margins at runtime"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/track-boundary.ts"
+    ],
+    "ProcessedDate": "2025-09-09 15:29:11",
+    "Result": "Works"
+  },
+  {
+    "Task": "Fix road markings to have consistent spacing between dashes on both straight and curved sections, and ensure smooth transitions at curve-straight road connections",
+    "Requirements": [
+      "Maintain equal visual distance between markings on straight roads and curves",
+      "Fix problematic connection regions where curves meet straight road parts",
+      "Ensure symmetric marking placement throughout the track",
+      "Preserve current dash and gap length configuration options",
+      "Optimize the algorithm for consistent spacing regardless of road segment type"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/road-markings.ts"
+    ],
+    "ProcessedDate": "2025-09-09 16:02:24",
+    "Result": "Works"
+  },
+  {
+    "Task": "Fix sector 4 time not visible due to reset after crossing start grid in lap-tracker",
+    "Requirements": [
+      "Modify update() method to preserve sector 4 time when completing lap",
+      "Change sectorTimes.fill(0) to only reset sectors for new lap, not completed ones",
+      "Store completed sector times before resetting for new lap",
+      "Ensure sector 4 time remains visible in the display after lap completion"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/lap-tracker.ts"
+    ],
+    "ProcessedDate": "2025-09-09 16:09:56",
+    "Result": "Works"
+  },
+  {
+    "Task": "Fix skid sound issue where it plays when race ends and car is reset",
+    "Requirements": [
+      "Skid sound should only play during skid events",
+      "Skid events should be marked by high speed and turning maneuvers",
+      "Prevent skid sound from playing when race ends or car is reset"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 16:21:09",
+    "Result": "Works"
+  },
+  {
+    "Task": "Make sure car cant turn when not moving",
+    "Requirements": [
+      "Add a flag that will keep current behavior when false",
+      "When on new feature should not allow to rotate car when its stationary to make it more realistic"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 16:41:27",
+    "Result": "Works"
+  },
+  {
+    "Task": "When car is off track",
+    "Requirements": [
+      "When car is off track, block keys"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 17:27:34",
+    "Result": "Impemented, keept slowing down velocity, but blocking steering with keys, with new flag"
+  },
+  {
+    "Task": "Bug with lap tracking",
+    "Requirements": [
+      "Player can move forward and back couple of times throue sector 1/4 to win race",
+      "It corsses start line back and forth and tracker takes it as full lap"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/lap-tracker.ts"
+    ],
+    "ProcessedDate": "2025-09-09 17:56:14",
+    "Result": "Worked, also tweaked car to more playable"
+  },
+  {
+    "Task": "Create a new TurboCarPlayer class with acceleration mechanics and skill-based challenges",
+    "Requirements": [
+      "Implement progressive acceleration when arrow keys are held",
+      "Add maximum speed limit where control becomes difficult",
+      "Introduce drift mechanics requiring skill to maintain control",
+      "Add overheating system that punishes constant acceleration",
+      "Implement boost system with cooldown for strategic speed bursts",
+      "Include visual feedback for speed, drift, and overheating states"
+    ],
+    "Paths": [
+      "C:/Atari-Monk-Art/turbo-laps-scenelet/src/scene/arrow-player.ts"
+    ],
+    "ProcessedDate": "2025-09-09 18:29:10",
+    "Result": "Interesting but only prototype"
+  }
 ]

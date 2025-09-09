@@ -1,0 +1,6 @@
+{
+    "Role": "Prompts designer",
+    "Reasoning": "Analize context, fill template with optimized prompt content",
+    "StopConditions": ["Prompt file composed"],
+    "OutputFormat": "Prompt in format of provided template, put paths from source prompt to designed one"
+}
